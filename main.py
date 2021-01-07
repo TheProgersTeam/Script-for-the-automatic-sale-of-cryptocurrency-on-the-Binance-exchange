@@ -17,13 +17,13 @@ client = Client(api_key, api_secret)
 
 
 # Market in which we trade (Name of cryptocurrency + Name of fiat currency)
-ASSET = 'BTCUSDT'
+ASSET = 'ETHUSDT'
 # Currency name
 CURRENCY = 'USDT'
 # Cryptocurrency name
-CRYPTOCURRENCY = 'BTC'
+CRYPTOCURRENCY = 'ETH'
 # The time period between receiving a new price
-TIME_SLEEP = 5
+TIME_SLEEP = 25
 # Fall percentage at which the sale will be made
 Percent = -15
 
@@ -65,7 +65,7 @@ while True:
     print('Best price:', str(BEST_PRICE), '| New price:', str(PRICE), '| Change:', str(percentage_of_change), '\n')
 
     if percentage_of_change <= Percent:
-        order_market_sell(toFixed(float(balance(CRYPTOCURRENCY)['free']), 6))
+        order_market_sell(toFixed(float(balance(CRYPTOCURRENCY)['free']), 5))
         # Stop the cycle
         break
         
